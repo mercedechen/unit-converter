@@ -41,9 +41,9 @@ const convertToCm = (x) => {
   return x * 2.54;
 };
 const updateCm = () => {
-  const cm = inchInput.value;
-  if(!isNaN(cm)) {
-    const cmValue = convertToCm(cm).toFixed(2);
+  const inch = inchInput.value;
+  if(!isNaN(inch)) {
+    const cmValue = convertToCm(inch).toFixed(2);
     cmOutput.textContent = cmValue;
   } else {
     cmOutput.textContent = "0";
@@ -56,12 +56,12 @@ inchInput.addEventListener("input", updateCm);
 const cmInput = document.getElementById("cmInput");
 const inchOutput = document.getElementById("inchOutput");
 const convertToInch = (x) => {
-  return x * 0.39;
+  return x * 0.393701;
 };
 const updateInch = () => {
-  const inch = cmInput.value;
-  if(!isNaN(inch)) {
-    const inchValue = convertToInch(inch).toFixed(2);
+  const cm = cmInput.value;
+  if(!isNaN(cm)) {
+    const inchValue = convertToInch(cm).toFixed(2);
     inchOutput.textContent = inchValue;
   } else {
     inchOutput.textContent = "0";
@@ -74,12 +74,12 @@ cmInput.addEventListener("input", updateInch);
 const ftInput = document.getElementById("ftInput");
 const mOutput = document.getElementById("mOutput");
 const convertToM = (x) => {
-  return x * 0.33;
+  return x * 0.3048;
 };
 const updateM = () => {
-  const m = ftInput.value;
-  if(!isNaN(m)) {
-    const mValue = convertToM(m).toFixed(2);
+  const ft = ftInput.value;
+  if(!isNaN(ft)) {
+    const mValue = convertToM(ft).toFixed(2);
     mOutput.textContent = mValue;
   } else {
     mOutput.textContent = "0";
@@ -92,12 +92,12 @@ ftInput.addEventListener("input", updateM);
 const mInput = document.getElementById("mInput");
 const ftOutput = document.getElementById("ftOutput");
 const convertToFt = (x) => {
-  return x * 3.28;
+  return x * 3.28084;
 };
 const updateFt = () => {
-  const ft = mInput.value;
-  if(!isNaN(ft)) {
-    const ftValue = convertToFt(ft).toFixed(2);
+  const m = mInput.value;
+  if(!isNaN(m)) {
+    const ftValue = convertToFt(m).toFixed(2);
     ftOutput.textContent = ftValue;
   } else {
     ftOutput.textContent = "0";
@@ -105,3 +105,39 @@ const updateFt = () => {
 };
 updateFt();
 mInput.addEventListener("input", updateFt);
+
+// convert y to m
+const yardInput = document.getElementById("yardInput");
+const meterOutput = document.getElementById("meterOutput");
+const convertToMeter = (x) => {
+  return x * 0.9144;
+};
+const updateMeter = () => {
+  const y = yardInput.value;
+  if(!isNaN(y)) {
+    const meterValue = convertToMeter(y).toFixed(2);
+    meterOutput.textContent = meterValue;
+  } else {
+    meterOutput.textContent = "0";
+  };
+};
+updateMeter();
+yardInput.addEventListener("input", updateMeter);
+
+// convert m to y
+const meterInput = document.getElementById("meterInput");
+const yardOutput = document.getElementById("yardOutput");
+const convertToYards = (x) => {
+  return x * 3.28084;
+}
+const updateYards = () => {
+  const meter = meterInput.value;
+  if(!isNaN(meter)) {
+    const yardValue = convertToYards(meter).toFixed(2);
+    yardOutput.textContent = yardValue;
+  } else {
+    yardOutput.textContent = "0";
+  };
+};
+updateYards();
+meterInput.addEventListener("input", updateYards);
