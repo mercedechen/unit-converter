@@ -87,3 +87,21 @@ const updateM = () => {
 };
 updateM();
 ftInput.addEventListener("input", updateM);
+
+// convert m to ft
+const mInput = document.getElementById("mInput");
+const ftOutput = document.getElementById("ftOutput");
+const convertToFt = (x) => {
+  return x * 3.28;
+};
+const updateFt = () => {
+  const ft = mInput.value;
+  if(!isNaN(ft)) {
+    const ftValue = convertToFt(ft).toFixed(2);
+    ftOutput.textContent = ftValue;
+  } else {
+    ftOutput.textContent = "0";
+  };
+};
+updateFt();
+mInput.addEventListener("input", updateFt);
