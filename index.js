@@ -43,7 +43,7 @@ const convertToCm = (x) => {
 const updateCm = () => {
   const cm = inchInput.value;
   if(!isNaN(cm)) {
-    const cmValue = convertToCm(cm);
+    const cmValue = convertToCm(cm).toFixed(2);
     cmOutput.textContent = cmValue;
   } else {
     cmOutput.textContent = "0";
@@ -61,7 +61,7 @@ const convertToInch = (x) => {
 const updateInch = () => {
   const inch = cmInput.value;
   if(!isNaN(inch)) {
-    const inchValue = convertToInch(inch);
+    const inchValue = convertToInch(inch).toFixed(2);
     inchOutput.textContent = inchValue;
   } else {
     inchOutput.textContent = "0";
@@ -69,3 +69,21 @@ const updateInch = () => {
 };
 updateInch();
 cmInput.addEventListener("input", updateInch);
+
+// convert ft to m
+const ftInput = document.getElementById("ftInput");
+const mOutput = document.getElementById("mOutput");
+const convertToM = (x) => {
+  return x * 0.33;
+};
+const updateM = () => {
+  const m = ftInput.value;
+  if(!isNaN(m)) {
+    const mValue = convertToM(m).toFixed(2);
+    mOutput.textContent = mValue;
+  } else {
+    mOutput.textContent = "0";
+  };
+};
+updateM();
+ftInput.addEventListener("input", updateM);
