@@ -19,12 +19,12 @@ form {
   flex-direction: column;
 }
 
-.group {
+tr {
   display: flex;
   margin-bottom: 15px;
 }
 
-.unit {
+td {
   display: flex;
 }
 
