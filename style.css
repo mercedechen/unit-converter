@@ -4,6 +4,7 @@ body {
   margin: 50px 100px;
   padding: 10px 50px;
   border: 1px solid #000;
+  border-radius: 10px;
   width: 200px;
 }
 
@@ -20,13 +21,17 @@ form {
 
 .group {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   margin-bottom: 15px;
 }
 
+.unit {
+  display: flex;
+}
+
 label {
   margin-right: 25px;
+  margin-left: 3px;
 }
 
 input {
@@ -34,9 +39,5 @@ input {
   background-color: #D9D9D9;
   width: 40px;
   height: 15px;
-}
-
-h6 {
-  font-weight: 400;
-  text-align: center;
+  margin-left: 25px;
 }
