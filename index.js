@@ -141,3 +141,39 @@ const updateYards = () => {
 };
 updateYards();
 meterInput.addEventListener("input", updateYards);
+
+// convert mi to km
+const miInput = document.getElementById("miInput");
+const kmOutput = document.getElementById("kmOutput");
+const convertToKm = (x) => {
+  return x * 1.60934;
+}
+const updateKm = () => {
+  const mi = miInput.value;
+  if(!isNaN(mi)) {
+    const kmValue = convertToKm(mi).toFixed(2);
+    kmOutput.textContent = kmValue;
+  } else {
+    kmOutput.textContent = "0";
+  };
+};
+updateKm();
+miInput.addEventListener("input", updateKm);
+
+// convert km to mi
+const kmInput = document.getElementById("kmInput");
+const miOutput = document.getElementById("miOutput");
+const convertToMi = (x) => {
+  return x * 0.621371;
+}
+const updateMi = () => {
+  const km = kmInput.value;
+  if(!isNaN(km)) {
+    const miValue = convertToMi(km).toFixed(2);
+    miOutput.textContent = miValue;
+  } else {
+    miOutput.textContent = "0";
+  };
+};
+updateMi();
+kmInput.addEventListener("input", updateMi)
