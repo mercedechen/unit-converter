@@ -1,43 +1,54 @@
 // convert F to C
-const fahren = document.getElementById("fahren");
+const fahrenInput = document.getElementById("fahrenInput");
 const celsiusOutput = document.getElementById("celsiusOutput")
-
-const convertToCelsius = (fahrenValue) => {
-  return ((fahrenValue - 32) * 5/9).toFixed(2);
+const convertToCelsius = (x) => {
+  return ((x - 32) * 5/9).toFixed(2);
 }
-convertToCelsius();
-
 const updateCelsius = () => {
-  const fahrenValue = parseFloat(fahren.value);
-  if (!isNaN(fahrenValue)) {
-    const celsiusValue = convertToCelsius(fahrenValue);
-    celsiusOutput.innerHTML = celsiusValue;
+  const fahren = parseFloat(fahrenInput.value);
+  if (!isNaN(fahren)) {
+    const celsiusValue = convertToCelsius(fahren);
+    celsiusOutput.textContent = celsiusValue;
   } else {
-    celsiusOutput.innerHTML = "-17.78";
-  }
-}
+    celsiusOutput.textContent = "-17.78";
+  };
+};
 updateCelsius();
-
-fahren.addEventListener("input", updateCelsius);
+fahrenInput.addEventListener("input", updateCelsius);
 
 // convert C to F
-const celsius = document.getElementById("celsius");
+const celsiusInput = document.getElementById("celsiusInput");
 const fahrenOutput = document.getElementById("fahrenOutput");
-
-const convertToFahren = (celsiusValue) => {
-  return ((celsiusValue * 9/5) + 32).toFixed(2);
+const convertToFahren = (x) => {
+  return ((x * 9/5) + 32).toFixed(2);
 }
-convertToFahren();
-
 const updateFahren = () => {
-  const celsiusValue = parseFloat(celsius.value);
-  if (!isNaN(celsiusValue)) {
-    const fahrenValue = convertToFahren(celsiusValue);
-    fahrenOutput.innerHTML = fahrenValue;
+  const celsius = parseFloat(celsiusInput.value);
+  if(!isNaN(celsius)) {
+    const fahrenValue = convertToFahren(celsius);
+    fahrenOutput.textContent = fahrenValue;
   } else {
-    fahrenOutput.innerHTML = "32";
-  }
-}
+    fahrenOutput.textContent = "32";
+  };
+};
 updateFahren();
+celsiusInput.addEventListener("input", updateFahren);
 
-celsius.addEventListener("input", updateFahren);
+// convert in to cm
+const inchInput = document.getElementById("inchInput");
+const cmOutput = document.getElementById("cmOutput");
+const convertToCm = (x) => {
+  return x * 2.54;
+}
+convertToCm();
+const updateCm = () => {
+  const cm = inchInput.value;
+  if(!isNaN(cm)) {
+    const cmValue = convertToCm(cm);
+    cmOutput.textContent = cmValue;
+  } else {
+    cmOutput.textContent = "0";
+  };
+};
+updateCm();
+inchInput.addEventListener("input", updateCm);
