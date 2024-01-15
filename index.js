@@ -1,6 +1,5 @@
 // convert F to C
 const fahren = document.getElementById("fahren");
-const fahrenValue = fahren.value;
 const celsiusOutput = document.getElementById("celsiusOutput")
 
 const convertToCelsius = (fahrenValue) => {
@@ -20,3 +19,25 @@ const updateCelsius = () => {
 updateCelsius();
 
 fahren.addEventListener("input", updateCelsius);
+
+// convert C to F
+const celsius = document.getElementById("celsius");
+const fahrenOutput = document.getElementById("fahrenOutput");
+
+const convertToFahren = (celsiusValue) => {
+  return ((celsiusValue * 9/5) + 32).toFixed(2);
+}
+convertToFahren();
+
+const updateFahren = () => {
+  const celsiusValue = parseFloat(celsius.value);
+  if (!isNaN(celsiusValue)) {
+    const fahrenValue = convertToFahren(celsiusValue);
+    fahrenOutput.innerHTML = fahrenValue;
+  } else {
+    fahrenOutput.innerHTML = "32";
+  }
+}
+updateFahren();
+
+celsius.addEventListener("input", updateFahren);
