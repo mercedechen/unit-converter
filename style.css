@@ -26,11 +26,15 @@ tr {
 
 td {
   display: flex;
+  width: 100px;
 }
 
-label {
-  margin-right: 25px;
-  margin-left: 3px;
+span {
+  margin-left: 25px;
+}
+
+label, p {
+  margin: 0 0 0 3px;
 }
 
 input {
@@ -38,5 +42,4 @@ input {
   background-color: #D9D9D9;
   width: 40px;
   height: 15px;
-  margin-left: 25px;
 }
