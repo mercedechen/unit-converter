@@ -1,16 +1,18 @@
 body {
+  display: flex;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12pt;
   margin: 50px 100px;
-  padding: 10px 50px;
-  border: 1px solid #000;
-  border-radius: 10px;
-  width: 200px;
 }
 
-h1 {
+table {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 10px 50px;
+}
+
+th {
   font-size: 12pt;
-  text-align: center;
   margin-bottom: 15px;
 }
 
@@ -19,8 +21,14 @@ tr {
   margin-bottom: 15px;
 }
 
+#title {
+  display: flex;
+  flex-direction: column;
+}
+
 td {
   display: flex;
+  align-items: center;
   width: 100px;
 }
 
@@ -37,4 +45,19 @@ input {
   background-color: #D9D9D9;
   width: 40px;
   height: 15px;
+}
+
+#legend {
+  margin-left: 100px;
+  border: 1px solid #000;
+  height: 200px;
+}
+
+#legend tr {
+  margin-bottom: 0;
+}
+
+.abrv {
+  width: 40px;
+  margin: 0 25px;
 }
