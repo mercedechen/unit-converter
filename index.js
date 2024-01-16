@@ -177,3 +177,147 @@ const updateMi = () => {
 };
 updateMi();
 kmInput.addEventListener("input", updateMi)
+
+// convert oz to g
+const ozInput = document.getElementById("ozInput");
+const gOutput = document.getElementById("gOutput");
+const convertToG = (x) => {
+  return x * 28.3495;
+}
+const updateGrams = () => {
+  const oz = ozInput.value;
+  if(!isNaN(oz)) {
+    const gValue = convertToG(oz).toFixed(2);
+    gOutput.textContent = gValue;
+  } else {
+    gOutput.textContent = "0";
+  };
+};
+updateGrams();
+ozInput.addEventListener("input", updateGrams);
+
+// convert g to oz
+const gInput = document.getElementById("gInput");
+const ozOutput = document.getElementById("ozOutput");
+const convertToOz = (x) => {
+  return x * 0.035274;
+};
+const updateOz = () => {
+  const g = gInput.value;
+  if(!isNaN(g)) {
+    const ozValue = convertToOz(g).toFixed(2);
+    ozOutput.textContent = ozValue;
+  } else {
+    ozOutput.textContent = "0";
+  };
+};
+updateOz();
+gInput.addEventListener("input", updateOz);
+
+// convert lb to kg
+const lbInput = document.getElementById("lbInput");
+const kgOutput = document.getElementById("kgOutput");
+const convertToKg = (x) => {
+  return x * 0.453592;
+};
+const updateKg = () => {
+  const lb = lbInput.value;
+  if(!isNaN(lb)) {
+    const kgValue = convertToKg(lb).toFixed(2);
+    kgOutput.textContent = kgValue;
+  } else {
+    kgOutput.textContent = "0";
+  };
+};
+updateKg();
+lbInput.addEventListener("input", updateKg);
+
+// convert kg to lb
+const kgInput = document.getElementById("kgInput");
+const lbOutput = document.getElementById("lbOutput");
+const convertToLb = (x) => {
+  return x * 2.20462;
+};
+const updateLb = () => {
+  const kg = kgInput.value;
+  if(!isNaN(kg)) {
+    const lbValue = convertToLb(kg).toFixed(2);
+    lbOutput.textContent = lbValue;
+  } else {
+    lbOutput.textContent = "0";
+  };
+};
+updateLb();
+kgInput.addEventListener("input", updateLb);
+
+// convert fl oz to ml
+const flOzInput = document.getElementById("flOzInput");
+const mlOutput = document.getElementById("mlOutput");
+const convertToMl = (x) => {
+  return x * 29.5735;
+};
+const updateMl = () => {
+  const floz = flOzInput.value;
+  if(!isNaN(floz)) {
+    const mlValue = convertToMl(floz).toFixed(2);
+    mlOutput.textContent = mlValue;
+  } else {
+    mlOutput.textContent = "0";
+  };
+};
+updateMl();
+flOzInput.addEventListener("input", updateMl);
+
+// convert ml to fl oz
+const mlInput = document.getElementById("mlInput");
+const flOzOutput = document.getElementById("flOzOutput");
+const convertToFlOz = (x) => {
+  return x * 0.033814;
+};
+const updateFlOz = () => {
+  const ml = mlInput.value;
+  if(!isNaN(ml)) {
+    const flOzValue = convertToFlOz(ml).toFixed(2);
+    flOzOutput.textContent = flOzValue;
+  } else {
+    flOzOutput.textContent = "0";
+  };
+};
+updateFlOz();
+mlInput.addEventListener("input", updateFlOz);
+
+// convert gal to liters
+const galInput = document.getElementById("galInput");
+const litersOutput = document.getElementById("litersOutput");
+const convertToLiters = (x) => {
+  return x * 3.78541;
+};
+const updateLiters = () => {
+  const gal = galInput.value;
+  if(!isNaN(gal)) {
+    const litersValue = convertToLiters(gal).toFixed(2);
+    litersOutput.textContent = litersValue;
+  } else {
+    litersOutput.textContent = "0";
+  };
+};
+updateLiters();
+galInput.addEventListener("input", updateLiters);
+
+// convert liters to gal
+const litersInput = document.getElementById("litersInput");
+const galOutput = document.getElementById("galOutput");
+const convertToGals = (x) => {
+  return x * 0.264172;
+};
+const updateGals = () => {
+  const liters = litersInput.value;
+  if(!isNaN(liters)) {
+    const galValue = convertToGals(liters).toFixed(2);
+    galOutput.textContent = galValue;
+  } else {
+    galOutput.textContent = "0";
+  };
+};
+updateGals();
+litersInput.addEventListener("input", updateGals);
